@@ -1,22 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package crudpessoas;
 
-/**
- *
- * @author Rever
- */
+import DAL.PessoaDAO;
+import Modelo.Pessoa;
+
 public class CRUDPessoas
 {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args)
     {
-        // TODO code application logic here
+        
+        Pessoa pessoa = new Pessoa();
+        pessoa.nome = "teste Crud";
+        pessoa.rg = "teste rg";
+        pessoa.cpf = "teste cpf";
+        PessoaDAO pessoaDAO = new PessoaDAO();
+        pessoaDAO.cadastrarPessoa(pessoa);
     }
     
 }
