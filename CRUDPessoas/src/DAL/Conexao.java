@@ -30,7 +30,7 @@ public class Conexao
     {
         try
         {
-            if (!con.isClosed())
+            if (con != null && !con.isClosed())
             {
                 con.close();
             }
