@@ -37,10 +37,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="lblCpf" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="lblCpf" min="-2" max="-2" attributes="0"/>
                           <Component id="txfCpf" max="32767" attributes="0"/>
                       </Group>
                   </Group>
