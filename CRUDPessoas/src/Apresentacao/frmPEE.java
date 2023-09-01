@@ -77,6 +77,13 @@ public class frmPEE extends javax.swing.JDialog
         lblCpf.setText("CPF");
 
         btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,6 +169,24 @@ public class frmPEE extends javax.swing.JDialog
             JOptionPane.showMessageDialog(null, controle.mensagem);
         }
     }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnExcluirActionPerformed
+    {//GEN-HEADEREND:event_btnExcluirActionPerformed
+        int resposta = JOptionPane.showConfirmDialog(null,
+                "Deseja realmente excluir esta pessoa?",
+                "Exclusão",
+                JOptionPane.YES_NO_OPTION);
+        if (resposta == JOptionPane.YES_OPTION)
+        {
+            Controle controle = new Controle();
+            controle.excluirPessoa(txfId.getText());
+            JOptionPane.showMessageDialog(null, controle.mensagem);
+            txfId.setText("");
+            txfNome.setText("");
+            txfRg.setText("");
+            txfCpf.setText("");
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments
