@@ -69,4 +69,23 @@ public class Controle
             this.mensagem = validacao.mensagem;
         }
     }
+    
+    public void excluirPessoa(String numId)
+    {
+        this.mensagem = "";
+        Validacao validacao = new Validacao();
+        validacao.validarId(numId);
+        if (validacao.mensagem.equals(""))
+        {
+            Pessoa pessoa = new Pessoa();
+            pessoa.idPessoa = validacao.id;
+            PessoaDAO pessoaDAO = new PessoaDAO();
+            pessoaDAO.excluirPessoa(pessoa);
+            this.mensagem = pessoaDAO.mensagem;
+        }
+        else
+        {
+            this.mensagem = validacao.mensagem;
+        }
+    }
 }
