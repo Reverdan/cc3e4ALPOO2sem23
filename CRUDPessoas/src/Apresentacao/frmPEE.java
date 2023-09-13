@@ -5,6 +5,7 @@
 package Apresentacao;
 
 import Modelo.Controle;
+import Modelo.Estaticos;
 import Modelo.Pessoa;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +48,7 @@ public class frmPEE extends javax.swing.JDialog
         txfRg = new javax.swing.JTextField();
         lblCpf = new javax.swing.JLabel();
         btnExcluir = new javax.swing.JButton();
+        btnPesquisarNome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -85,6 +87,15 @@ public class frmPEE extends javax.swing.JDialog
             }
         });
 
+        btnPesquisarNome.setText("Pesquisar");
+        btnPesquisarNome.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnPesquisarNomeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,14 +103,7 @@ public class frmPEE extends javax.swing.JDialog
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblId)
-                        .addGap(18, 18, 18)
-                        .addComponent(txfId, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblNome, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txfNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -109,8 +113,19 @@ public class frmPEE extends javax.swing.JDialog
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCpf)
                             .addComponent(txfCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblId)
+                                .addGap(18, 18, 18)
+                                .addComponent(txfId, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                            .addComponent(btnPesquisarNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +138,9 @@ public class frmPEE extends javax.swing.JDialog
                 .addGap(31, 31, 31)
                 .addComponent(lblNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txfNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPesquisarNome))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRg)
@@ -136,7 +153,7 @@ public class frmPEE extends javax.swing.JDialog
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEditar)
                     .addComponent(btnExcluir))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
@@ -187,6 +204,32 @@ public class frmPEE extends javax.swing.JDialog
             txfCpf.setText("");
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void btnPesquisarNomeActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnPesquisarNomeActionPerformed
+    {//GEN-HEADEREND:event_btnPesquisarNomeActionPerformed
+        Controle controle = new Controle();
+        List<Pessoa> listaPessoas = controle.pesquisarPessoaPorNome(txfNome.getText());
+        if (listaPessoas.isEmpty())
+            JOptionPane.showMessageDialog(null, "Não existe registros com esta pesquisa");
+        if (listaPessoas.size() == 1)
+        {
+            txfId.setText(String.valueOf(listaPessoas.get(0).idPessoa));
+            txfNome.setText(listaPessoas.get(0).nome);
+            txfRg.setText(listaPessoas.get(0).rg);
+            txfCpf.setText(listaPessoas.get(0).cpf);
+        }
+        if (listaPessoas.size() > 1)
+        {
+            Estaticos.listaPessoas.clear();
+            Estaticos.listaPessoas = listaPessoas;
+            frmPesquisaNome frmPN = new frmPesquisaNome(null, true);
+            frmPN.setVisible(true);
+            txfId.setText(String.valueOf(Estaticos.pessoaResultado.idPessoa));
+            txfNome.setText(Estaticos.pessoaResultado.nome);
+            txfRg.setText(Estaticos.pessoaResultado.rg);
+            txfCpf.setText(Estaticos.pessoaResultado.cpf);
+        }
+    }//GEN-LAST:event_btnPesquisarNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,6 +289,7 @@ public class frmPEE extends javax.swing.JDialog
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnPesquisar;
+    private javax.swing.JButton btnPesquisarNome;
     private javax.swing.JLabel lblCpf;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblNome;
