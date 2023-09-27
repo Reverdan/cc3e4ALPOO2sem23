@@ -20,7 +20,7 @@ public class Serial implements Runnable
     {
         String leitura = "";
         String[] valores = new String[3];
-        SerialPort comPort = SerialPort.getCommPort("COM5");
+        SerialPort comPort = SerialPort.getCommPort("COM4");
         comPort.openPort();
         comPort.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);
         InputStream in = comPort.getInputStream();
