@@ -35,5 +35,6 @@ public class Validacao
             this.mensagem += "RG deve ter menos que 10 caracteres\n";
         if (listaDadosPessoa.get(3).length() > 13)
             this.mensagem += "CPF deve ter menos que 13 caracteres\n";
+        
     }
 }

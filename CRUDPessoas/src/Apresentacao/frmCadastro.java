@@ -32,8 +32,7 @@ public class frmCadastro extends javax.swing.JDialog
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         lblNome = new javax.swing.JLabel();
         txfNome = new javax.swing.JTextField();
@@ -42,6 +41,25 @@ public class frmCadastro extends javax.swing.JDialog
         lblCpf = new javax.swing.JLabel();
         txfCpf = new javax.swing.JTextField();
         btnCadastrar = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        lblLogEndRes = new javax.swing.JLabel();
+        txfLogEndRes = new javax.swing.JTextField();
+        lblNumEndRes = new javax.swing.JLabel();
+        txfNumEndRes = new javax.swing.JTextField();
+        lblBairroEndRes = new javax.swing.JLabel();
+        txfBairroEndRes = new javax.swing.JTextField();
+        lblCidadeEndRes = new javax.swing.JLabel();
+        txfCidadeEndRes = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        lblLogEndCom = new javax.swing.JLabel();
+        txfLogEndCom = new javax.swing.JTextField();
+        lblNumEndCom = new javax.swing.JLabel();
+        txfNumEndCom = new javax.swing.JTextField();
+        lblBairroEndCom = new javax.swing.JLabel();
+        txfBairroEndCom = new javax.swing.JTextField();
+        lblCidadeEndCom = new javax.swing.JLabel();
+        txfCidadeEndCom = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Pessoas");
@@ -53,13 +71,115 @@ public class frmCadastro extends javax.swing.JDialog
         lblCpf.setText("CPF");
 
         btnCadastrar.setText("Cadastrar");
-        btnCadastrar.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarActionPerformed(evt);
             }
         });
+
+        lblLogEndRes.setText("Logradouro");
+
+        lblNumEndRes.setText("Número");
+
+        lblBairroEndRes.setText("Bairro");
+
+        lblCidadeEndRes.setText("Cidade");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblLogEndRes)
+                    .addComponent(lblNumEndRes)
+                    .addComponent(lblBairroEndRes)
+                    .addComponent(lblCidadeEndRes))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txfLogEndRes, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txfCidadeEndRes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                        .addComponent(txfBairroEndRes, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(txfNumEndRes, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLogEndRes)
+                    .addComponent(txfLogEndRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNumEndRes)
+                    .addComponent(txfNumEndRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBairroEndRes)
+                    .addComponent(txfBairroEndRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCidadeEndRes)
+                    .addComponent(txfCidadeEndRes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("End. Res.", jPanel2);
+
+        lblLogEndCom.setText("Logradouro");
+
+        lblNumEndCom.setText("Número");
+
+        lblBairroEndCom.setText("Bairro");
+
+        lblCidadeEndCom.setText("Cidade");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblLogEndCom)
+                    .addComponent(lblNumEndCom)
+                    .addComponent(lblBairroEndCom)
+                    .addComponent(lblCidadeEndCom))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txfLogEndCom, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txfCidadeEndCom, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                        .addComponent(txfBairroEndCom, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(txfNumEndCom, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLogEndCom)
+                    .addComponent(txfLogEndCom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNumEndCom)
+                    .addComponent(txfNumEndCom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBairroEndCom)
+                    .addComponent(txfBairroEndCom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCidadeEndCom)
+                    .addComponent(txfCidadeEndCom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("End. Com.", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,7 +189,7 @@ public class frmCadastro extends javax.swing.JDialog
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblNome)
-                    .addComponent(txfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfNome)
                     .addComponent(btnCadastrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,11 +197,10 @@ public class frmCadastro extends javax.swing.JDialog
                             .addComponent(lblRg))
                         .addGap(56, 56, 56)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCpf)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(txfCpf))))
-                .addContainerGap(41, Short.MAX_VALUE))
+                            .addComponent(lblCpf)
+                            .addComponent(txfCpf)))
+                    .addComponent(jTabbedPane1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,7 +219,9 @@ public class frmCadastro extends javax.swing.JDialog
                     .addComponent(txfCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(btnCadastrar)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -115,6 +236,15 @@ public class frmCadastro extends javax.swing.JDialog
         listadadosPessoa.add(txfNome.getText());
         listadadosPessoa.add(txfRg.getText());
         listadadosPessoa.add(txfCpf.getText());
+        listadadosPessoa.add(txfLogEndRes.getText());
+        listadadosPessoa.add(txfNumEndRes.getText());
+        listadadosPessoa.add(txfBairroEndRes.getText());
+        listadadosPessoa.add(txfCidadeEndRes.getText());
+        listadadosPessoa.add(txfLogEndCom.getText());
+        listadadosPessoa.add(txfNumEndCom.getText());
+        listadadosPessoa.add(txfBairroEndCom.getText());
+        listadadosPessoa.add(txfCidadeEndCom.getText());
+        
         controle.cadastrarPessoa(listadadosPessoa);
         JOptionPane.showMessageDialog(null, controle.mensagem);
     }//GEN-LAST:event_btnCadastrarActionPerformed
@@ -175,11 +305,30 @@ public class frmCadastro extends javax.swing.JDialog
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblBairroEndCom;
+    private javax.swing.JLabel lblBairroEndRes;
+    private javax.swing.JLabel lblCidadeEndCom;
+    private javax.swing.JLabel lblCidadeEndRes;
     private javax.swing.JLabel lblCpf;
+    private javax.swing.JLabel lblLogEndCom;
+    private javax.swing.JLabel lblLogEndRes;
     private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblNumEndCom;
+    private javax.swing.JLabel lblNumEndRes;
     private javax.swing.JLabel lblRg;
+    private javax.swing.JTextField txfBairroEndCom;
+    private javax.swing.JTextField txfBairroEndRes;
+    private javax.swing.JTextField txfCidadeEndCom;
+    private javax.swing.JTextField txfCidadeEndRes;
     private javax.swing.JTextField txfCpf;
+    private javax.swing.JTextField txfLogEndCom;
+    private javax.swing.JTextField txfLogEndRes;
     private javax.swing.JTextField txfNome;
+    private javax.swing.JTextField txfNumEndCom;
+    private javax.swing.JTextField txfNumEndRes;
     private javax.swing.JTextField txfRg;
     // End of variables declaration//GEN-END:variables
 }

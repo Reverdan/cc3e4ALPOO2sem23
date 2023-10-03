@@ -1,5 +1,6 @@
 package DAL;
 
+import Modelo.Endereco;
 import java.sql.*;
 import Modelo.Pessoa;
 import java.util.ArrayList;
@@ -25,16 +26,40 @@ public class PessoaDAO
             String comSql = "insert into pessoas "
                     + "(nome, rg, cpf) "
                     + "values(?, ?, ?)";
-            PreparedStatement stmt = con.prepareStatement(comSql);
-            stmt.setString(1, pessoa.nome);
-            stmt.setString(2, pessoa.rg);
-            stmt.setString(3, pessoa.cpf);
+            PreparedStatement stmt = con.prepareStatement(comSql, 
+                    Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, pessoa.getNome());
+            stmt.setString(2, pessoa.getRg());
+            stmt.setString(3, pessoa.getCpf());
             stmt.execute();
-            this.mensagem = "Cadastro efetuado com sucesso!";
-        } catch (Exception e)
+            ResultSet resultSet = stmt.getGeneratedKeys();
+            if (resultSet.next())
+            {
+                int id = resultSet.getInt(1);
+                if (!pessoa.getEnderecoList().isEmpty())
+                {
+                    for(Endereco e : pessoa.getEnderecoList())
+                    {
+                        comSql = "insert into enderecos "
+                                + "(logradouro, numero, bairro, cidade, fk_idPessoa) "
+                                + "values (?, ?, ?, ?, ?)";
+                        stmt = con.prepareStatement(comSql);
+                        stmt.setString(1, e.getLogradouro());
+                        stmt.setString(2, e.getNumero());
+                        stmt.setString(3, e.getBairro());
+                        stmt.setString(4, e.getCidade());
+                        stmt.setInt(5, id);
+                        stmt.execute();
+                    }
+                }
+                this.mensagem = "Cadastro efetuado com sucesso";
+            }
+        }
+        catch (Exception e)
         {
-            this.mensagem = "Erro de conexao BD";
-        } finally
+            this.mensagem = "Erro de BD";
+        }
+        finally
         {
             conexao.desconectar();
         }
@@ -55,13 +80,13 @@ public class PessoaDAO
             String comSql = "select * from pessoas "
                     + "where idPessoa = ?";
             PreparedStatement stmt = con.prepareStatement(comSql);
-            stmt.setInt(1, pessoa.idPessoa);
+            stmt.setInt(1, pessoa.getIdPessoa());
             ResultSet resultset = stmt.executeQuery();
             if (resultset.next())
             {
-                pessoa.nome = resultset.getString("nome");
-                pessoa.rg = resultset.getString("rg");
-                pessoa.cpf = resultset.getString("cpf");
+                pessoa.setNome(resultset.getString("nome"));
+                pessoa.setRg(resultset.getString("rg"));
+                pessoa.setCpf(resultset.getString("cpf"));
             } else
             {
                 this.mensagem = "Não existe registro com este ID";
@@ -77,7 +102,7 @@ public class PessoaDAO
         return pessoa;
     }
     
-    public void editarPessoa(Pessoa pessoa)
+    /*public void editarPessoa(Pessoa pessoa)
     {
         this.mensagem = "";
         Conexao conexao = new Conexao();
@@ -177,6 +202,6 @@ public class PessoaDAO
             conexao.desconectar();
         }
         return listaPessoas;
-    }
+    }*/
 
 }

@@ -37,7 +37,7 @@ public class frmPesquisaNome extends javax.swing.JDialog
         {
             modelo.addRow(new Object[]
             {
-                pessoa.idPessoa, pessoa.nome, pessoa.rg, pessoa.cpf
+                pessoa.getIdPessoa(), pessoa.getNome(), pessoa.getRg(), pessoa.getCpf()
             });
         }
     }
@@ -124,10 +124,10 @@ public class frmPesquisaNome extends javax.swing.JDialog
     private void tblPessoasMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_tblPessoasMouseClicked
     {//GEN-HEADEREND:event_tblPessoasMouseClicked
         int linha = tblPessoas.getSelectedRow();
-        Estaticos.pessoaResultado.idPessoa = (int) tblPessoas.getValueAt(linha, 0);
+        /*Estaticos.pessoaResultado.idPessoa = (int) tblPessoas.getValueAt(linha, 0);
         Estaticos.pessoaResultado.nome = (String) tblPessoas.getValueAt(linha, 1);
         Estaticos.pessoaResultado.rg = (String) tblPessoas.getValueAt(linha, 2);
-        Estaticos.pessoaResultado.cpf = (String) tblPessoas.getValueAt(linha, 3);
+        Estaticos.pessoaResultado.cpf = (String) tblPessoas.getValueAt(linha, 3);*/
     }//GEN-LAST:event_tblPessoasMouseClicked
 
     /**

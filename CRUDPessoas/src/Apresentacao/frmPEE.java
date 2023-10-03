@@ -167,14 +167,14 @@ public class frmPEE extends javax.swing.JDialog
         listadadosPessoa.add(txfNome.getText());
         listadadosPessoa.add(txfRg.getText());
         listadadosPessoa.add(txfCpf.getText());
-        controle.editarPessoa(listadadosPessoa);
+        //controle.editarPessoa(listadadosPessoa);
         JOptionPane.showMessageDialog(null, controle.mensagem);
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnPesquisarActionPerformed
     {//GEN-HEADEREND:event_btnPesquisarActionPerformed
         Controle controle = new Controle();
-        Pessoa pessoa = controle.pesquisarPessoaPorId(txfId.getText());
+        /*Pessoa pessoa = controle.pesquisarPessoaPorId(txfId.getText());
         if (controle.mensagem.equals(""))
         {
             txfNome.setText(pessoa.nome);
@@ -184,7 +184,7 @@ public class frmPEE extends javax.swing.JDialog
         else
         {
             JOptionPane.showMessageDialog(null, controle.mensagem);
-        }
+        }*/
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnExcluirActionPerformed
@@ -196,7 +196,7 @@ public class frmPEE extends javax.swing.JDialog
         if (resposta == JOptionPane.YES_OPTION)
         {
             Controle controle = new Controle();
-            controle.excluirPessoa(txfId.getText());
+            //controle.excluirPessoa(txfId.getText());
             JOptionPane.showMessageDialog(null, controle.mensagem);
             txfId.setText("");
             txfNome.setText("");
@@ -207,7 +207,7 @@ public class frmPEE extends javax.swing.JDialog
 
     private void btnPesquisarNomeActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnPesquisarNomeActionPerformed
     {//GEN-HEADEREND:event_btnPesquisarNomeActionPerformed
-        Controle controle = new Controle();
+        /*Controle controle = new Controle();
         List<Pessoa> listaPessoas = controle.pesquisarPessoaPorNome(txfNome.getText());
         if (listaPessoas.isEmpty())
             JOptionPane.showMessageDialog(null, "Não existe registros com esta pesquisa");
@@ -228,7 +228,7 @@ public class frmPEE extends javax.swing.JDialog
             txfNome.setText(Estaticos.pessoaResultado.nome);
             txfRg.setText(Estaticos.pessoaResultado.rg);
             txfCpf.setText(Estaticos.pessoaResultado.cpf);
-        }
+        }*/
     }//GEN-LAST:event_btnPesquisarNomeActionPerformed
 
     /**
