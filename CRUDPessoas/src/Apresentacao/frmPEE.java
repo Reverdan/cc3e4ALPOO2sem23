@@ -174,17 +174,17 @@ public class frmPEE extends javax.swing.JDialog
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnPesquisarActionPerformed
     {//GEN-HEADEREND:event_btnPesquisarActionPerformed
         Controle controle = new Controle();
-        /*Pessoa pessoa = controle.pesquisarPessoaPorId(txfId.getText());
+        Pessoa pessoa = controle.pesquisarPessoaPorId(txfId.getText());
         if (controle.mensagem.equals(""))
         {
-            txfNome.setText(pessoa.nome);
+            /*txfNome.setText(pessoa.nome);
             txfRg.setText(pessoa.rg);
-            txfCpf.setText(pessoa.cpf);
+            txfCpf.setText(pessoa.cpf);*/
         }
         else
         {
             JOptionPane.showMessageDialog(null, controle.mensagem);
-        }*/
+        }
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnExcluirActionPerformed

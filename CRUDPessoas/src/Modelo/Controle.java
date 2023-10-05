@@ -49,7 +49,7 @@ public class Controle
         }
     }
     
-    /*public Pessoa pesquisarPessoaPorId(String numId)
+    public Pessoa pesquisarPessoaPorId(String numId)
     {
         this.mensagem = "";
         Pessoa pessoa = new Pessoa();
@@ -57,7 +57,7 @@ public class Controle
         validacao.validarId(numId);
         if (validacao.mensagem.equals(""))
         {
-            pessoa.idPessoa = validacao.id;
+            pessoa.setIdPessoa(validacao.id);
             PessoaDAO pessoaDAO = new PessoaDAO();
             pessoa = pessoaDAO.pesquisarPessoaPorId(pessoa);
             this.mensagem = pessoaDAO.mensagem;
@@ -69,7 +69,7 @@ public class Controle
         return pessoa;
     }
     
-    public void editarPessoa(List<String> listaDadosPessoa)
+    /*public void editarPessoa(List<String> listaDadosPessoa)
     {
         this.mensagem = "";
         Validacao validacao = new Validacao();

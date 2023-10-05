@@ -32,7 +32,8 @@ public class frmCadastro extends javax.swing.JDialog
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         lblNome = new javax.swing.JLabel();
         txfNome = new javax.swing.JTextField();
@@ -71,8 +72,10 @@ public class frmCadastro extends javax.swing.JDialog
         lblCpf.setText("CPF");
 
         btnCadastrar.setText("Cadastrar");
-        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnCadastrarActionPerformed(evt);
             }
         });
@@ -200,7 +203,7 @@ public class frmCadastro extends javax.swing.JDialog
                             .addComponent(lblCpf)
                             .addComponent(txfCpf)))
                     .addComponent(jTabbedPane1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
