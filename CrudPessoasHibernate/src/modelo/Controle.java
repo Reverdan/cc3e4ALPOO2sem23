@@ -28,11 +28,13 @@ public class Controle
             endRes.setNumero(listaDadosPessoa.get(5));
             endRes.setBairro(listaDadosPessoa.get(6));
             endRes.setCidade(listaDadosPessoa.get(7));
+            endRes.setFkidPessoa(pessoa);
             
             endCom.setLogradouro(listaDadosPessoa.get(8));
             endCom.setNumero(listaDadosPessoa.get(9));
             endCom.setBairro(listaDadosPessoa.get(10));
             endCom.setCidade(listaDadosPessoa.get(11));
+            endCom.setFkidPessoa(pessoa);
             
             listaEnderecos.add(endRes);
             listaEnderecos.add(endCom);
@@ -57,7 +59,7 @@ public class Controle
         validacao.validarId(numId);
         if (validacao.mensagem.equals(""))
         {
-            pessoa.setIdpessoa(validacao.id);
+            pessoa.setIdPessoa(validacao.id);
             PessoaDAO pessoaDAO = new PessoaDAO();
             pessoa = pessoaDAO.pesquisarPessoaPorId(pessoa);
             this.mensagem = pessoaDAO.mensagem;

@@ -21,6 +21,7 @@ public class CrudPessoasHibernate
     {
         frmPrincipal frmP = new frmPrincipal(null, true);
         frmP.setVisible(true);
+        System.exit(0);
     }
     
 }

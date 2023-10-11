@@ -4,7 +4,7 @@ import java.sql.*;
 public class Conexao
 {
     public String stringConexao = ""
-            + "jdbc:mysql://localhost:3306/prephibernatepessoas";
+            + "jdbc:mysql://localhost:3306/alpoo";
     private Connection con;
     public String mensagem;
     
@@ -16,7 +16,7 @@ public class Conexao
             if (con == null || con.isClosed())
             {
                 con = DriverManager.getConnection(
-                        stringConexao, "root", "rever");
+                        stringConexao, "root", "rever489");
             }
         } 
         catch (SQLException e)

@@ -5,16 +5,35 @@ import java.sql.*;
 import modelo.Pessoa;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Session;
 
 public class PessoaDAO
 {
 
     public String mensagem;
+    public Session session = HibernateUtil.getSessionFactory().openSession();
 
     public void cadastrarPessoa(Pessoa pessoa)
     {
         this.mensagem = "";
-        Conexao conexao = new Conexao();
+        try
+        {
+            session.beginTransaction();
+            session.save(pessoa);
+            session.getTransaction().commit();
+            session.flush();
+            this.mensagem = "Pessoa cadastrada com sucesso";
+        }
+        catch (Exception e)
+        {
+            this.mensagem = "Erro de BD";
+        }
+        finally
+        {
+            session.close();
+        }
+        
+        /*Conexao conexao = new Conexao();
         Connection con = conexao.conectar();
         if (!conexao.mensagem.equals(""))
         {
@@ -41,7 +60,7 @@ public class PessoaDAO
                     for (Endereco e : pessoa.getEnderecoList())
                     {
                         comSql = "insert into enderecos "
-                                + "(logradouro, numero, bairro, cidade, fk_idPessoas) "
+                                + "(logradouro, numero, bairro, cidade, fk_idPessoa) "
                                 + "values (?, ?, ?, ?, ?)";
                         stmt = con.prepareStatement(comSql);
                         stmt.setString(1, e.getLogradouro());
@@ -62,7 +81,7 @@ public class PessoaDAO
         finally
         {
             conexao.desconectar();
-        }
+        }*/
     }
 
     public Pessoa pesquisarPessoaPorId(Pessoa pessoa)
@@ -74,15 +93,15 @@ public class PessoaDAO
         {
             this.mensagem = conexao.mensagem;
             return pessoa;
-        }
+        } 
         try
         {
             String comSql = "select * from pessoas "
                     + "join enderecos "
-                    + "on enderecos.fk_idPessoas = pessoas.idPessoa "
+                    + "on enderecos.fk_idPessoa = pessoas.idPessoa "
                     + "where idPessoa = ?";
             PreparedStatement stmt = con.prepareStatement(comSql);
-            stmt.setInt(1, pessoa.getIdpessoa());
+            stmt.setInt(1, pessoa.getIdPessoa());
             ResultSet resultset = stmt.executeQuery();
             if (resultset.next())
             {

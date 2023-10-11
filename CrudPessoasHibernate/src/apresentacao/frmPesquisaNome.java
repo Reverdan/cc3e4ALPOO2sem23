@@ -37,7 +37,7 @@ public class frmPesquisaNome extends javax.swing.JDialog
         {
             modelo.addRow(new Object[]
             {
-                pessoa.getIdpessoa(), pessoa.getNome(), pessoa.getRg(), pessoa.getCpf()
+                pessoa.getIdPessoa(), pessoa.getNome(), pessoa.getRg(), pessoa.getCpf()
             });
         }
     }

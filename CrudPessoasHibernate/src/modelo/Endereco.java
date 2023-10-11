@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author rever
+ * @author Rever
  */
 @Entity
 @Table(name = "enderecos")
@@ -51,9 +51,9 @@ public class Endereco implements Serializable
     private String bairro;
     @Column(name = "cidade")
     private String cidade;
-    @JoinColumn(name = "fk_idPessoas", referencedColumnName = "idpessoa")
-    @ManyToOne
-    private Pessoa fkidPessoas;
+    @JoinColumn(name = "fk_idPessoa", referencedColumnName = "idPessoa")
+    @ManyToOne(optional = false)
+    private Pessoa fkidPessoa;
 
     public Endereco()
     {
@@ -114,14 +114,14 @@ public class Endereco implements Serializable
         this.cidade = cidade;
     }
 
-    public Pessoa getFkidPessoas()
+    public Pessoa getFkidPessoa()
     {
-        return fkidPessoas;
+        return fkidPessoa;
     }
 
-    public void setFkidPessoas(Pessoa fkidPessoas)
+    public void setFkidPessoa(Pessoa fkidPessoa)
     {
-        this.fkidPessoas = fkidPessoas;
+        this.fkidPessoa = fkidPessoa;
     }
 
     @Override
