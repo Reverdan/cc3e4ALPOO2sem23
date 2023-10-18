@@ -14,5 +14,6 @@ public class Validacao
             if (s.isEmpty()) 
                 this.mensagem = "Nenhum dado pode ser vazio";
         }
+        
     }
 }

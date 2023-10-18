@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Projeto Soma</title>
+    </h:head>
+    <h:body>
+        Soma de dois números
+        <h:form>
+            <br></br>
+            <br></br>
+            <h:panelGrid columns="2">
+                Número 1
+                <h:inputText id="inpNum1" value="#{bgrIndex.num1}"></h:inputText>
+                Número 2
+                <h:inputText id="inpNum2" value="#{bgrIndex.num2}"></h:inputText>
+                <h:commandButton id="btnSomar" value="Somar" action="#{bgrIndex.somar()}"></h:commandButton>
+                <h:inputHidden></h:inputHidden>
+                <h:inputHidden></h:inputHidden>
+                <h:outputText id="otxResultado" value="#{bgrIndex.resultado}"></h:outputText>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
